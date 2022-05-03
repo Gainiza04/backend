@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+    <%- include('../partials/index_style'); %>
+</head>
+<body class="container" style="background: #F5F2E7">
+
+<%- include('../partials/navbar');%>
+
+
+<main>
+    <br>
+    <hr>
+    <div class="container">
+        <div class="row">
+            <div class="col-3">
+                <img src="<%= sneaker.image %>" width="300" height="300">
+                <h1 class="text-center display-6"><%= sneaker.price %> TG</h1>
+
+            </div>
+            <div class="col">
+                <fieldset class="my-5">
+                    <div class="text-center">
+                        <h1 class="display-5"><%= sneaker.title %> </h1>
+                    </div>
+
+                    <h4 class="text-center"><%- sneaker.body %></h4>
+
+                    <br>
+                    <div class="d-grid gap-2 d-md-flex justify-content-center">
+                        <button class="btn btn-outline-success me-md-2 col-2" type="button">Buy Now</button>
+                        <button class="btn btn-outline-success col-2" type="button">Add to cart</button>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+
+    <br>
+</main>
+
+
+</body>
+</html>

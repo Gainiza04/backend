@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head'); %>
+
+    <style>
+        .wrapper {
+            max-width: 1110px;
+            margin: 0 auto;
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        .collection {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+            justify-content: space-between;
+            padding: 50px 0;
+        }
+
+        .collection-item {
+            -webkit-box-flex: 0;
+            -ms-flex: 0 0 60%;
+            flex: 0 0 60%;
+        }
+
+        .collection-title {
+            font-size: 24px;
+            font-weight: 300;
+            text-transform: uppercase;
+        }
+
+        .collection-desp {
+            font-size: 16px;
+        }
+        .notice {
+            text-align: center;
+            color: #fff;
+            padding: 50px;
+        }
+
+        .notice-title {
+            font-size: 40px;
+            text-transform: uppercase;
+        }
+
+        .notice-title span {
+            font-weight: 700;
+        }
+
+
+        .page-dark {
+            background-color: black;
+        }
+
+        .page-light {
+            background-color: #EFEEEF;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="page page-dark notice">
+    <div class="wrapper">
+        <button class="display-4" style="color: white; border: none; background: black" onclick="location.href = '/'">SNEAK SHOP</button>
+        <p class="lead">The best only with us</p>
+    </div>
+
+</div>
+<br><br>
+<div class="container">
+    <div class="row">
+        <% sneakers.forEach(function(sneaker) { %>
+            <div class="col-3">
+                <div class="card" style="width: 20rem;">
+                    <a href="sneaker/<%= sneaker._id %>">
+                        <img class="card-img-top" src="<%= sneaker.image %>" alt="Card image cap">
+                    </a>
+                    <div class="card-body">
+                        <h5 class="card-title text-center"><a style="text-decoration: none" href="sneaker/<%= sneaker._id %>"><%= sneaker.title %></a></h5>
+                        <p class="card-text text-center lead"><%= sneaker.price %> TG</p>
+                        <hr>
+                        <p class="card-text text-center"><%= sneaker.shortly %></p>
+                    </div>
+                </div>
+                <br>
+            </div>
+        <% }); %>
+    </div>
+</div>
+</body>
+</html>
